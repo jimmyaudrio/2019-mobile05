@@ -24,36 +24,32 @@ public class DynamicActivity extends AppCompatActivity {
 
 
     public void handlerClickLoadRedFragment(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder,new RedFragment());
-        fragmentTransaction.commit();
-               //ragment fragment = getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder);
 
-       //f (fragment == null || fragment instanceof BlueFragment) {
-           //etSupportFragmentManager().beginTransaction()
-                  //.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right)
-                  //.replace(R.id.dynamic_fragment_placeholder, new RedFragment(), RED_TAG)
-                  //.addToBackStack(null)
-                  //.commit();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder);
+
+        if (fragment == null || fragment instanceof BlueFragment) {
+           getSupportFragmentManager().beginTransaction()
+                  .setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right)
+                  .replace(R.id.dynamic_fragment_placeholder, new RedFragment(), RED_TAG)
+                  .addToBackStack(null)
+                  .commit();
 
 
-      //}
+      }
     }
 
     public void handlerClickLoadBlueFragment(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder,new BlueFragment());
-        fragmentTransaction.commit();
-       //Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder);
 
-      //if (fragment == null || fragment instanceof RedFragment) {
-       //   getSupportFragmentManager().beginTransaction()
-         //         .setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right)
-           //       .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(), BLUE_TAG)
-             //     .addToBackStack(null)
-               //   .commit();
+       Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.dynamic_fragment_placeholder);
 
-      //}
+      if (fragment == null || fragment instanceof RedFragment) {
+          getSupportFragmentManager().beginTransaction()
+                  .setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right)
+                  .replace(R.id.dynamic_fragment_placeholder, new BlueFragment(), BLUE_TAG)
+                  .addToBackStack(null)
+                  .commit();
+
+      }
 
     }
 }
