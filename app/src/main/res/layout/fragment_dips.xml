@@ -12,9 +12,9 @@
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/top_orange"
+            android:layout_width="323dp"
+            android:layout_height="263dp"
+            android:src="@drawable/top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
